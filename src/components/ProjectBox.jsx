@@ -40,11 +40,15 @@ const desc = {
   }
 };
 
-const ProjectBox = ({ projectPhoto, projectName }) => {
+const ProjectBox = ({ projectPhoto, projectName, darkMode }) => {
   const project = desc[projectName] || {};
 
   return (
-    <div className="bg-gray-900 p-4 rounded-lg shadow-lg text-gray-100">
+    <div
+      className={`${
+        darkMode ? 'bg-background-dark2 text-text-dark2' : 'bg-background-light2 text-text-light2'
+      } p-4 rounded-lg shadow-lg`}
+    >
       <img
         className="w-full h-48 object-cover rounded-lg mb-4"
         src={projectPhoto}
@@ -54,12 +58,20 @@ const ProjectBox = ({ projectPhoto, projectName }) => {
       <p className="mb-4">{project.description}</p>
       <div className="flex space-x-4">
         <a href={project.github} target="_blank" rel="noopener noreferrer">
-          <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md shadow-md hover:bg-blue-700 transition duration-300">
+          <button
+            className={`flex items-center px-4 py-2 ${
+              darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark-hover' : 'bg-button-light text-text-light hover:bg-button-light-hover'
+            } rounded-md shadow-md transition duration-300`}
+          >
             <FaGithub className="mr-2" /> Github
           </button>
         </a>
         <a href={project.website} target="_blank" rel="noopener noreferrer">
-          <button className="flex items-center px-4 py-2 bg-green-600 text-white rounded-md shadow-md hover:bg-green-700 transition duration-300">
+          <button
+            className={`flex items-center px-4 py-2 ${
+              darkMode ? 'bg-button-dark2 text-text-dark hover:bg-button-dark2-hover' : 'bg-button-light2 text-text-light hover:bg-button-light2-hover'
+            } rounded-md shadow-md transition duration-300`}
+          >
             <CgFileDocument className="mr-2" /> Site
           </button>
         </a>

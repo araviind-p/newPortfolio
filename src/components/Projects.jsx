@@ -6,6 +6,7 @@ import SimpleAmazonImg from "../images/SimpleAmazon.png";
 import AttendanceImg from "../images/Attendance.png";
 import FoodRecipie from "../images/FoodRecipie.png";
 import OTP_MERN from "../images/OTP_MERN.png";
+import { useSelector } from "react-redux";
 
 const projectData = [
   { photo: OTP_MERN, name: "OTP_MERN" },
@@ -17,10 +18,16 @@ const projectData = [
 ];
 
 const Projects = () => {
-  return (
-    <div id="projects" className="flex justify-center py-8 px-4 bg-gray-800 text-gray-100 min-h-screen w-full overflow-x-hidden">
-      <div className="w-[85%]">
+  const {darkMode} = useSelector((state) => state.appSlice);
 
+  return (
+    <div
+      id="projects"
+      className={`${
+        darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
+      } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden`}
+    >
+      <div className="w-[85%]">
         <h1 className="text-4xl font-bold text-center mb-8">
           My <b>Projects</b>
         </h1>
@@ -30,6 +37,7 @@ const Projects = () => {
               key={project.name}
               projectPhoto={project.photo}
               projectName={project.name}
+              darkMode={darkMode}
             />
           ))}
         </div>
