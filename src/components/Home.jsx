@@ -10,7 +10,7 @@ const Home = () => {
   const {darkMode} = useSelector((state) => state.appSlice);
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-[95vh] px-4 py-8 ${
+      className={`flex flex-col items-center justify-center min-h-[100vh] px-4 py-8 ${
         darkMode ? 'bg-background-dark' : 'bg-background-light'
       } w-full overflow-x-hidden`}
     >
