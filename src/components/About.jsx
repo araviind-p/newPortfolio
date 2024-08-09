@@ -37,7 +37,7 @@ const About = () => {
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-block mt-4 px-6 py-3 ${
-            darkMode ? 'bg-button-dark3 text-text-dark hover:bg-button-dark3-hover' : 'bg-button-light3 text-text-light hover:bg-button-light3-hover'
+            darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark3-hover' : 'bg-button-light text-text-light hover:bg-button-light3-hover'
           } rounded-md shadow-md transition duration-300`}
         >
           <button className="flex items-center">
