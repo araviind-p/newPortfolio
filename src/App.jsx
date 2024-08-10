@@ -6,6 +6,7 @@ import About from './components/About';  // Ensure you have this component
 import Contact from './components/Contact';  // Ensure you have this component
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Projects />
       <Contact />
+      <Footer />
     </Router>
   );
 }

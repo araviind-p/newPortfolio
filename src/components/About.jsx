@@ -4,13 +4,12 @@ import { FaFileDownload } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const About = () => {
-  const {darkMode} = useSelector((state) => state.appSlice);
+  const { darkMode } = useSelector((state) => state.appSlice);
   return (
     <div
       id="about"
-      className={`${
-        darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-      } min-h-screen w-full overflow-x-hidden `}
+      className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
+        } min-h-screen w-full overflow-x-hidden `}
     >
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-6">
@@ -18,8 +17,7 @@ const About = () => {
         </h1>
         <p className="text-lg leading-relaxed mb-6">
           Hi, my name is <b>Aravind P</b> and I am from Kannur, Kerala, India.
-          I'm a <b>Full-stack web developer</b> and a final year university
-          student pursuing <b>B.Tech in Computer Science</b>. <br />
+          I'm a <b>Full-stack web developer</b>  and have recently graduated with a <b>B.Tech in Computer Science</b>. <br />
           <br />
           I love to create projects with beautiful designs and put my own
           twists on it, you can check out some of my work in the projects
@@ -36,9 +34,8 @@ const About = () => {
           href="https://drive.google.com/file/d/1Cut-MDMXJYi-g0AeXiqB8bzNt6vFXsml/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-block mt-4 px-6 py-3 ${
-            darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark3-hover' : 'bg-button-light text-text-light hover:bg-button-light3-hover'
-          } rounded-md shadow-md transition duration-300`}
+          className={`inline-block mt-4 px-6 py-3 ${darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark3-hover' : 'bg-button-light text-text-light hover:bg-button-light3-hover'
+            } rounded-md shadow-md transition duration-300`}
         >
           <button className="flex items-center">
             Resume <FaFileDownload className="ml-2" />

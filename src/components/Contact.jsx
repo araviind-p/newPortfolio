@@ -4,7 +4,7 @@ import { FaCheck } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const Contact = () => {
-  const {darkMode} = useSelector((state) => state.appSlice);
+  const { darkMode } = useSelector((state) => state.appSlice);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,22 +46,19 @@ const Contact = () => {
 
   return (
     <div
-      className={`${
-        darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-      } w-full overflow-x-hidden flex justify-center`}
+      className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
+        } w-full overflow-x-hidden flex justify-center`}
     >
-      <div id="contact" className="min-h-screen flex flex-col w-[85%] overflow-x-hidden">
-        <main className="flex-grow p-4 sm:p-8 lg:p-16 ">
+      <div id="contact" className=" flex flex-col w-[85%] overflow-x-hidden">
+        <main className="flex-grow px-4 sm:px-8 lg:px-16 ">
           <div
-            className={`${
-              darkMode ? 'bg-background-dark' : 'bg-background-light'
-            } w-[100%] md:w-[60%] mx-auto rounded-lg shadow-lg p-3 md:p-20`}
+            className={`${darkMode ? 'bg-background-dark' : 'bg-background-light'
+              } w-[100%] md:w-[60%] mx-auto rounded-lg shadow-lg px-3 `}
           >
             {submitted ? (
               <p
-                className={`${
-                  darkMode ? 'text-button-dark2' : 'text-button-light2'
-                } text-lg font-semibold text-center`}
+                className={`${darkMode ? 'text-button-dark2' : 'text-button-light2'
+                  } text-lg font-semibold text-center`}
               >
                 {message}
               </p>
@@ -79,9 +76,8 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className={`${
-                        darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
-                      } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
+                      className={`${darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
+                        } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -93,9 +89,8 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className={`${
-                        darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
-                      } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
+                      className={`${darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
+                        } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -106,9 +101,8 @@ const Contact = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      className={`${
-                        darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
-                      } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
+                      className={`${darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
+                        } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
                       rows="4"
                     />
                   </div>
@@ -117,9 +111,8 @@ const Contact = () => {
                 <div className="text-center">
                   <button
                     type="submit"
-                    className={`${
-                      darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark-hover' : 'bg-button-light text-text-light hover:bg-button-light-hover'
-                    } inline-flex items-center px-6 py-2 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-input-dark-focus`}
+                    className={`${darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark-hover' : 'bg-button-light text-text-light hover:bg-button-light-hover'
+                      } inline-flex items-center px-6 py-2 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-input-dark-focus`}
                   >
                     Submit
                     <FaCheck className="ml-2" />

@@ -32,9 +32,8 @@ const Skills = ({ skill, darkMode }) => {
   return (
     <div
       title={skill}
-      className={`w-[80px] h-[100px] md:w-[10%] md:min-w-[150px] md:h-[150px] flex items-center justify-center mb-6 border-2 ${
-        darkMode ? 'border-skill-dark-border bg-background-dark2 hover:bg-background-dark3 hover:border-transparent' : 'border-skill-light-border bg-background-light2 hover:bg-background-light3 hover:border-transparent'
-      } text-4xl rounded-md transition-transform duration-500 transform hover:scale-110`}
+      className={`w-[80px] h-[100px] md:w-[10%] md:min-w-[150px] md:h-[150px] flex items-center justify-center mb-6 border-2 ${darkMode ? 'border-skill-dark-border bg-background-dark2 hover:bg-background-dark3 hover:border-transparent' : 'border-skill-light-border bg-background-light2 hover:bg-background-light3 hover:border-transparent'
+        } text-4xl rounded-md transition-transform duration-500 transform hover:scale-110`}
     >
       {icon[skill]}
     </div>
