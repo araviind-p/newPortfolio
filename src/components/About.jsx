@@ -46,7 +46,7 @@ const About = () => {
       <div className="py-8 w-screen">
         <h1 className="text-3xl font-bold text-center mb-6">Skillset</h1>
         <div className="w-screen flex justify-center">
-          <div className="flex flex-wrap justify-center gap-6 px-4 w-[85%]">
+          <div className="flex flex-wrap justify-center gap-6 px-4 w-[90%]">
             <Skills skill="HTML" darkMode={darkMode} />
             <Skills skill="CSS" darkMode={darkMode} />
             <Skills skill="JavaScript" darkMode={darkMode} />

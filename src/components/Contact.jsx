@@ -49,7 +49,7 @@ const Contact = () => {
       className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
         } w-full overflow-x-hidden flex justify-center`}
     >
-      <div id="contact" className=" flex flex-col w-[85%] overflow-x-hidden">
+      <div id="contact" className=" flex flex-col w-[90%] overflow-x-hidden">
         <main className="flex-grow px-4 sm:px-8 lg:px-16 ">
           <div
             className={`${darkMode ? 'bg-background-dark' : 'bg-background-light'

@@ -27,7 +27,7 @@ const Projects = () => {
         darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
       } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden`}
     >
-      <div className="w-[85%]">
+      <div className="w-[90%]">
         <h1 className="text-4xl font-bold text-center mb-8">
           My <b>Projects</b>
         </h1>
