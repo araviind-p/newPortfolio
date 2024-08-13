@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <div
       className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-        } w-full overflow-x-hidden flex justify-center`}
+        } w-full overflow-x-hidden flex justify-center pt-10`}
     >
       <div id="contact" className=" flex flex-col w-[90%] overflow-x-hidden">
         <main className="flex-grow px-4 sm:px-8 lg:px-16 ">
@@ -64,7 +64,7 @@ const Contact = () => {
               </p>
             ) : (
               <form ref={form} onSubmit={sendEmail} className="space-y-6 pb-20">
-                <h2 className="text-2xl font-bold text-center">Contact Me</h2>
+                <h1 className="text-4xl font-bold text-center">Contact Me</h1>
 
                 <div className={` flex flex-col space-y-4`}>
                   <div className="flex flex-col">

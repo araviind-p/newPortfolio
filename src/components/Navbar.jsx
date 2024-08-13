@@ -38,7 +38,7 @@ export default function Navbar() {
         const element = document.querySelector(hash);
         if (element) {
           window.scrollTo({
-            top: element.offsetTop - document.querySelector('nav').offsetHeight, // Adjust for navbar height
+            top: element.offsetTop,
             behavior: 'smooth'
           });
         }
@@ -54,7 +54,7 @@ export default function Navbar() {
   return (
     <Disclosure as="nav" className={classNames(
       darkMode ? 'bg-gray-900' : 'bg-[#b6cdd6]',
-      'fixed w-screen z-10'
+      'fixed w-screen z-10 top-0'
     )}>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">

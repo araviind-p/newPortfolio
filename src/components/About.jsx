@@ -9,7 +9,7 @@ const About = () => {
     <div
       id="about"
       className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-        } min-h-screen w-full overflow-x-hidden `}
+        } min-h-screen w-full overflow-x-hidden pt-12`}
     >
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-6">
