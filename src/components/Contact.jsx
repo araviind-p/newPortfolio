@@ -66,7 +66,7 @@ const Contact = () => {
               <form ref={form} onSubmit={sendEmail} className="space-y-6 pb-20">
                 <h2 className="text-2xl font-bold text-center">Contact Me</h2>
 
-                <div className="flex flex-col space-y-4">
+                <div className={` flex flex-col space-y-4`}>
                   <div className="flex flex-col">
                     <label htmlFor="name" className="text-sm font-semibold">Name</label>
                     <input
@@ -76,7 +76,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className={`${darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
+                      className={`${darkMode ? 'bg-input-dark border-input-dark text-text-light' : 'bg-input-light border-input-light'
                         } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
                     />
                   </div>
@@ -89,7 +89,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className={`${darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
+                      className={`${darkMode ? 'bg-input-dark border-input-dark text-text-light' : 'bg-input-light border-input-light'
                         } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
                     />
                   </div>
@@ -101,7 +101,7 @@ const Contact = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      className={`${darkMode ? 'bg-input-dark border-input-dark' : 'bg-input-light border-input-light'
+                      className={`${darkMode ? 'bg-input-dark border-input-dark text-text-light' : 'bg-input-light border-input-light'
                         } mt-1 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-input-dark-focus w-full`}
                       rows="4"
                     />

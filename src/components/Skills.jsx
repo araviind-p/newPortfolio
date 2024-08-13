@@ -12,6 +12,8 @@ import {
 import { TbCircleLetterC } from "react-icons/tb";
 import { DiJavascript1 } from "react-icons/di";
 import { SiMongodb, SiLeetcode } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
 
 const Skills = ({ skill, darkMode }) => {
   const icon = {
@@ -20,6 +22,8 @@ const Skills = ({ skill, darkMode }) => {
     JavaScript: <DiJavascript1 />,
     Bootstrap: <FaBootstrap />,
     React: <FaReact />,
+    Redux: <SiRedux />,
+    TailwindCss: <RiTailwindCssFill />,
     NPM: <FaNpm />,
     MongoDB: <SiMongodb />,
     Git: <FaGitAlt />,

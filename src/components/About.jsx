@@ -52,6 +52,8 @@ const About = () => {
             <Skills skill="JavaScript" darkMode={darkMode} />
             <Skills skill="Bootstrap" darkMode={darkMode} />
             <Skills skill="React" darkMode={darkMode} />
+            <Skills skill="Redux" darkMode={darkMode} />
+            <Skills skill="TailwindCss" darkMode={darkMode} />
             <Skills skill="NPM" darkMode={darkMode} />
             <Skills skill="MongoDB" darkMode={darkMode} />
             <Skills skill="Git" darkMode={darkMode} />
