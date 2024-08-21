@@ -95,7 +95,7 @@ export default function Navbar() {
               onClick={() => dispatch(switch_theme())} // Dispatch switch_theme without payload
               className={classNames(
                 darkMode ? 'text-gray-300' : 'text-gray-600',
-                'p-2 rounded-md hover:bg-gray-600 focus:outline-none'
+                'p-2 rounded-md hover:bg-gray-600'
               )}
             >
               {darkMode ? (
