@@ -6,26 +6,27 @@ import SimpleAmazonImg from "../images/SimpleAmazon.png";
 import AttendanceImg from "../images/Attendance.png";
 import FoodRecipie from "../images/FoodRecipie.png";
 import OTP_MERN from "../images/OTP_MERN.png";
+import GithubImg from "../images/Github.png";
 import { useSelector } from "react-redux";
 
 const projectData = [
+  { photo: GithubImg, name: "Github" },
   { photo: OTP_MERN, name: "OTP_MERN" },
   { photo: SimpleAmazonImg, name: "SimpleAmazon" },
   { photo: BookListImg, name: "BookList" },
   { photo: FoodRecipie, name: "FoodRecipie" },
   { photo: WeatherImg, name: "WeatherApp" },
-  { photo: AttendanceImg, name: "Attendance" }
+  { photo: AttendanceImg, name: "Attendance" },
 ];
 
 const Projects = () => {
-  const {darkMode} = useSelector((state) => state.appSlice);
+  const { darkMode } = useSelector((state) => state.appSlice);
 
   return (
     <div
       id="projects"
-      className={`${
-        darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-      } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden pt-20`}
+      className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
+        } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden pt-20`}
     >
       <div className="w-[90%]">
         <h1 className="text-4xl font-bold text-center mb-8">
