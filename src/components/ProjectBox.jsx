@@ -44,6 +44,12 @@ const desc = {
     github: "https://github.com/araviind-p/github-mern",
     website: "https://github-mern-app-6lgm.onrender.com/"
   },
+  JobTracker: {
+    description:
+      "The Job Tracker is a responsive MERN stack web app with secure JWT-based authentication, allowing users to add, edit, and manage job applications efficiently. It uses Redux for state management and Tailwind CSS for a modern design that adapts to all screen sizes.",
+    github: "https://github.com/araviind-p/job-tracker.git",
+    website: "https://job-tracker-mern-h3iq.onrender.com"
+  },
 };
 
 const ProjectBox = ({ projectPhoto, projectName, darkMode }) => {

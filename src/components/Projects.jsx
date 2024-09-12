@@ -8,8 +8,10 @@ import FoodRecipie from "../images/FoodRecipie.png";
 import OTP_MERN from "../images/OTP_MERN.png";
 import GithubImg from "../images/Github.png";
 import { useSelector } from "react-redux";
+import JobTrackerImg from "../images/JobTracker.png"
 
 const projectData = [
+  { photo: JobTrackerImg, name: "JobTracker" },
   { photo: GithubImg, name: "Github" },
   { photo: OTP_MERN, name: "OTP_MERN" },
   { photo: SimpleAmazonImg, name: "SimpleAmazon" },
