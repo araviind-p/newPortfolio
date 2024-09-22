@@ -26,10 +26,10 @@ const Contact = () => {
 
     toast.promise(
       emailjs.sendForm(
-        "service_qxc2udf",
-        "template_f4cbblr",
+        "service_mcgjd2e",
+        "template_axlsf2a",
         form.current,
-        "UO8L5U3zMr4ve36RF"
+        "5DIWZD9qp_ngqZ7z7"
       ),
       {
         loading: "Sending message...",
