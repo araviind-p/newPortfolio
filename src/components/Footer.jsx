@@ -30,7 +30,7 @@ export function Footer() {
                         <Typography as="a" href="https://www.linkedin.com/in/aravind-p-20853125a/" className="opacity-80 transition-opacity hover:opacity-100">
                             <FaLinkedin className="h-5 w-5" />
                         </Typography>
-                        <Typography as="a" href="mailto:aravindparavind10@gmail.com" className="opacity-80 transition-opacity hover:opacity-100">
+                        <Typography as="a" href="mailto:araviindp@gmail.com" className="opacity-80 transition-opacity hover:opacity-100">
                             <BiLogoGmail className="h-5 w-5" />
                         </Typography>
                     </div>
