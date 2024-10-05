@@ -31,7 +31,7 @@ const About = () => {
           spare time.
         </p>
         <a
-          href="https://drive.google.com/file/d/1S_y0WU4SeBwWwV4mKgOmi8LTiOo4nx8v/view?usp=sharing"
+          href="https://drive.google.com/file/d/1Nc5AJHJKw1jh2dBFB_6BW-mv0yTE7sCn/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-block mt-4 px-6 py-3 ${darkMode ? 'bg-button-dark text-text-dark hover:bg-button-dark3-hover' : 'bg-button-light text-text-light hover:bg-button-light3-hover'
