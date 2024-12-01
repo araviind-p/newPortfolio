@@ -7,8 +7,9 @@ import AttendanceImg from "../images/Attendance.png";
 import FoodRecipie from "../images/FoodRecipie.png";
 import OTP_MERN from "../images/OTP_MERN.png";
 import GithubImg from "../images/Github.png";
+import JobTrackerImg from "../images/JobTracker.png";
 import { useSelector } from "react-redux";
-import JobTrackerImg from "../images/JobTracker.png"
+import { motion } from "framer-motion";
 
 const projectData = [
   { photo: JobTrackerImg, name: "JobTracker" },
@@ -24,28 +25,67 @@ const projectData = [
 const Projects = () => {
   const { darkMode } = useSelector((state) => state.appSlice);
 
+  // Framer Motion variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }, // Stagger the appearance of child elements
+    },
+  };
+
+  const projectBoxVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       id="projects"
-      className={`${darkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-        } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden pt-20`}
+      className={`${
+        darkMode
+          ? "bg-background-dark text-text-dark"
+          : "bg-background-light text-text-light"
+      } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden pt-20`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of the section is visible
+      variants={containerVariants}
     >
       <div className="w-[90%]">
-        <h1 className="text-4xl font-bold text-center mb-8">
+        <motion.h1
+          className="text-4xl font-bold text-center mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           My <b>Projects</b>
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </motion.h1>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+        >
           {projectData.map((project) => (
-            <ProjectBox
+            <motion.div
               key={project.name}
-              projectPhoto={project.photo}
-              projectName={project.name}
-              darkMode={darkMode}
-            />
+              variants={projectBoxVariants} // Apply animation to each project box
+              whileHover={{ scale: 1.05 }} // Slight scale-up effect on hover
+            >
+              <ProjectBox
+                projectPhoto={project.photo}
+                projectName={project.name}
+                darkMode={darkMode}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
