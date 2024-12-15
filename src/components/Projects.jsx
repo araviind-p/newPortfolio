@@ -52,16 +52,14 @@ const Projects = () => {
           : "bg-background-light text-text-light"
       } flex justify-center py-8 px-4 min-h-screen w-full overflow-x-hidden pt-20`}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of the section is visible
+      animate="visible"
       variants={containerVariants}
     >
       <div className="w-[90%]">
         <motion.h1
           className="text-4xl font-bold text-center mb-8"
           initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           My <b>Projects</b>
