@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 import Photo from "../images/Photo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { switch_theme } from "../redux/appSlice";
+import { scroller } from 'react-scroll';
 
 const initialNavigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'About', href: '#about', current: false },
-  { name: 'Projects', href: '#projects', current: false },
-  { name: 'Contact', href: '#contact', current: false },
+  { name: 'Home', target: 'home', current: true },
+  { name: 'About', target: 'about', current: false },
+  { name: 'Projects', target: 'projects', current: false },
+  { name: 'Contact', target: 'contact', current: false },
 ];
 
 function classNames(...classes) {
@@ -21,7 +22,9 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const [navigation, setNavigation] = useState(initialNavigation);
 
-  const handleClick = (clickedItemName) => {
+  // Updated handleClick with react-scroll smooth scroll
+  const handleClick = (clickedItemName, target) => {
+    // Update navigation state
     setNavigation((prevNavigation) =>
       prevNavigation.map((item) =>
         item.name === clickedItemName
@@ -29,27 +32,14 @@ export default function Navbar() {
           : { ...item, current: false }
       )
     );
+
+    // Smooth scrolling using react-scroll
+    scroller.scrollTo(target, {
+      duration: 500,
+      smooth: true,
+      offset: -70, // Adjust for fixed navbar height
+    });
   };
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          window.scrollTo({
-            top: element.offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Handle initial page load with hash
-
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
 
   return (
     <Disclosure as="nav" className={classNames(
@@ -75,12 +65,19 @@ export default function Navbar() {
                 {navigation.map((item) => (
                   <a
                     key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    onClick={() => handleClick(item.name)}
+                    onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleClick(item.name, item.target); // Pass target for scrolling
+                    }}
                     className={classNames(
-                      item.current ? (darkMode ? 'bg-gray-800 text-gray-200' : 'bg-gray-900 text-gray-100') : (darkMode ? 'text-gray-300 hover:bg-gray-800 hover:text-gray-200' : 'text-gray-900 hover:bg-gray-700 hover:text-gray-100'),
-                      'rounded-md px-3 py-2 text-sm font-medium'
+                      item.current
+                        ? (darkMode
+                          ? 'bg-gray-800 text-gray-200'
+                          : 'bg-gray-900 text-gray-100')
+                        : (darkMode
+                          ? 'text-gray-300 hover:bg-gray-800 hover:text-gray-200'
+                          : 'text-gray-900 hover:bg-gray-700 hover:text-gray-100'),
+                      'rounded-md px-3 py-2 text-sm font-medium cursor-pointer'
                     )}
                   >
                     {item.name}
@@ -108,7 +105,9 @@ export default function Navbar() {
             <Menu as="div" className="relative ml-3">
               <div>
                 <MenuButton className={classNames(
-                  darkMode ? 'bg-gray-800 text-gray-400 focus:ring-gray-900' : 'bg-gray-700 text-gray-300 focus:ring-gray-700',
+                  darkMode
+                    ? 'bg-gray-800 text-gray-400 focus:ring-gray-900'
+                    : 'bg-gray-700 text-gray-300 focus:ring-gray-700',
                   'relative flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-offset-2'
                 )}>
                   <span className="sr-only">Open user menu</span>
@@ -132,12 +131,19 @@ export default function Navbar() {
             <DisclosureButton
               key={item.name}
               as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              onClick={() => handleClick(item.name)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick(item.name, item.target);
+              }}
               className={classNames(
-                item.current ? (darkMode ? 'bg-gray-900 text-gray-200' : 'bg-gray-800 text-gray-100') : (darkMode ? 'text-gray-300 hover:bg-gray-800 hover:text-gray-200' :  'text-gray-900 hover:bg-gray-700 hover:text-gray-100'),
-                'block rounded-md px-3 py-2 text-base font-medium'
+                item.current
+                  ? (darkMode
+                    ? 'bg-gray-900 text-gray-200'
+                    : 'bg-gray-800 text-gray-100')
+                  : (darkMode
+                    ? 'text-gray-300 hover:bg-gray-800 hover:text-gray-200'
+                    : 'text-gray-900 hover:bg-gray-700 hover:text-gray-100'),
+                'block rounded-md px-3 py-2 text-base font-medium cursor-pointer'
               )}
             >
               {item.name}

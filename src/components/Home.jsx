@@ -27,6 +27,7 @@ const Home = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      id='home'
     >
       <motion.div
         className="flex flex-col items-center text-center space-y-6 md:space-y-8 lg:space-y-10"
