@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <motion.div
-      className={`flex flex-col items-center justify-center min-h-[100vh] px-4 py-8 ${darkMode ? "bg-background-dark" : "bg-background-light"
+      className={`flex flex-col items-center justify-center min-h-[calc(100vh-64px)] sm:min-h-[100vh] px-4 py-8 ${darkMode ? "bg-background-dark" : "bg-background-light"
         } w-full overflow-x-hidden mt-10`}
       initial="hidden"
       animate="visible"
